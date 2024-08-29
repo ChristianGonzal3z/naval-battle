@@ -14,7 +14,7 @@ public class ConnectingSceneController : MonoBehaviour
 
     void Start()
     {
-        message.text = "Connecting...";
+        message.text = "Conectando...";
 
         client = GameClient.Instance;
 
@@ -33,7 +33,7 @@ public class ConnectingSceneController : MonoBehaviour
 
     void OnConnect(object sender, EventArgs e)
     {
-        message.text = "Finding a game...";
+        message.text = "Buscando una partida...";
 
         if (!client.Joined)
         {
@@ -47,7 +47,7 @@ public class ConnectingSceneController : MonoBehaviour
 
     void OnJoin(object sender, EventArgs e)
     {
-        message.text = "Joined! Finding another player...";
+        message.text = "¡Conectado! Buscando otro jugador";
 
         client.OnGamePhaseChange += GamePhaseChangeHandler;
     }
