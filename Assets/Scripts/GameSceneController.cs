@@ -124,14 +124,14 @@ public class GameSceneController : MonoBehaviour
 
     private void CloseHandler(object sender, object args)
     {
-        message.text = "Server Disconnected";
+        message.text = "Server Desconectado";
     }
 
     // state changes & player input
 
     public void BeginShipPlacement()
     {
-        message.text = "Place your ships";
+        message.text = "Coloca tus barcos";
         mode = GameMode.Placement;
         shipsPlaced = 0;
         mapView.SetPlacementMode();
@@ -140,7 +140,7 @@ public class GameSceneController : MonoBehaviour
 
     public void WaitForOpponentToPlace()
     {
-        message.text = "Waiting for opponent to place ships...";
+        message.text = "Esperando que el oponente coloque barcos...";
         rotateShipButton.enabled = false;
         mapView.SetDisabled();
     }
@@ -148,13 +148,13 @@ public class GameSceneController : MonoBehaviour
     public void WaitForOpponentTurn()
     {
         mapView.SetDisabled();
-        message.text = "Waiting for opponent...";
+        message.text = "Esperando al oponente";
     }
 
     public void StartTurn()
     {
         mapView.SetAttackMode();
-        message.text = "Your Turn!";
+        message.text = "¡Tu turno!";
     }
 
     public void TakeTurn(Vector3Int coordinate)
@@ -171,11 +171,11 @@ public class GameSceneController : MonoBehaviour
 
         if (myPlayerNumber == state.winningPlayer)
         {
-            message.text = "You win!";
+            message.text = "¡Ganaste!";
         }
         else
         {
-            message.text = "You lost :(";
+            message.text = "Perdiste :(";
         }
     }
 
